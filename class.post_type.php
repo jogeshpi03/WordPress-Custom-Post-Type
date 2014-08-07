@@ -20,16 +20,15 @@
             $this->taxonomy = $taxonomy;
         }
 
-
+        
         function singular($string) {
             return preg_match("/s$/", $string) ? rtrim($string, "s") : $string;
         }
     
     
         function invoke_post_type_settings() {
-            ob_start();
             
-            $menu_name = apply_filters("{$this->post_type}_menu_name", "EStore");
+            $menu_name = apply_filters("{$this->post_type}_menu_name", $this->singular_name);
             $supports = apply_filters("{$this->post_type}_supports", array('title', 'editor', 'thumbnail'));
             $slug = apply_filters("{$this->post_type}_rewrite_slug", array("slug"=>str_replace(' ', '_', strtolower($this->name)), 'with_front' => FALSE ) );
             $menu_icon = apply_filters("{$this->post_type}_menu_icon", "");
