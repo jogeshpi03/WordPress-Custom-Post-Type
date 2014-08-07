@@ -1,12 +1,35 @@
 <?php
 
+    /**
+     * Post Type calss generate 
+     * Custom Post Type, Taxonomy
+     * 
+     * @author Jogesh Sharma
+     */
     class Post_Type {
     
     
+        /**
+         * Post Type Key
+         * 
+         * @var string 
+         */
         var $post_type;
 
+        
+        /**
+         * Display Name
+         * 
+         * @var string
+         */
         var $name;
         
+        
+        /**
+         * Taxonomy ( default - false )
+         * 
+         * @var boolean
+         */
         var $taxonomy;
     
     
